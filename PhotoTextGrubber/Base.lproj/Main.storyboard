@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="703-4V-yAM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="clB-vc-fyl">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="703-4V-yAM" customClass="RootViewController" customModule="PhotoTextGrubber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I7W-xW-C47"/>
+                        <viewControllerLayoutGuide type="bottom" id="IfR-02-kHw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.60000002384185791" green="0.40000000596046448" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-101" y="-243"/>
+        </scene>
+        <!--Data View Controller-->
+        <scene sceneID="snT-py-3hH">
+            <objects>
+                <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" customModule="PhotoTextGrubber" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fXf-Jd-eTc"/>
+                        <viewControllerLayoutGuide type="bottom" id="EPS-s9-h4K"/>
+                    </layoutGuides>
+                    <view key="view" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ZwX-cT-FIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView multipleTouchEnabled="YES" contentMode="center" directionalLockEnabled="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tjv-G0-Fck">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <inset key="scrollIndicatorInsets" minX="2" minY="2" maxX="2" maxY="2"/>
+                                <connections>
+                                    <outlet property="delegate" destination="S4R-Ja-viH" id="I6l-mq-pay"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmC-wM-0zX">
+                                <rect key="frame" x="299" y="561" width="47" height="30"/>
+                                <state key="normal" title="Freeze"/>
+                                <connections>
+                                    <action selector="Freeze:" destination="S4R-Ja-viH" eventType="touchUpInside" id="mbf-2v-nd6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9x-ev-g39">
+                                <rect key="frame" x="307" y="599" width="30" height="30"/>
+                                <state key="normal" title="Cap"/>
+                                <connections>
+                                    <action selector="CapPicture:" destination="S4R-Ja-viH" eventType="touchUpInside" id="2OU-dG-t8b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXE-Og-Pl2">
+                                <rect key="frame" x="307" y="599" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="crop"/>
+                                <connections>
+                                    <action selector="crop:" destination="S4R-Ja-viH" eventType="touchUpInside" id="slZ-1k-5s3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZY-A9-u01" userLabel="Confirm">
+                                <rect key="frame" x="307" y="561" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="cropConfirm:" destination="S4R-Ja-viH" eventType="touchUpInside" id="vSL-Wh-oPQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biD-y7-si2" userLabel="Cancle">
+                                <rect key="frame" x="299" y="599" width="68" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancle"/>
+                                <connections>
+                                    <action selector="cropCancle:" destination="S4R-Ja-viH" eventType="touchUpInside" id="DJQ-p5-X2L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPr-Lf-4sX">
+                                <rect key="frame" x="306" y="561" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="resume"/>
+                                <connections>
+                                    <action selector="resume:" destination="S4R-Ja-viH" eventType="touchUpInside" id="CSy-ll-3zK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRz-pP-kBG">
+                                <rect key="frame" x="305" y="523" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="back:" destination="S4R-Ja-viH" eventType="touchUpInside" id="BC1-n0-Z3o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqz-ZU-LIC">
+                                <rect key="frame" x="292" y="561" width="75" height="30"/>
+                                <state key="normal" title="UseGallary"/>
+                                <connections>
+                                    <action selector="UseGallary:" destination="S4R-Ja-viH" eventType="touchUpInside" id="J93-Y6-aiB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97826086960000003" green="0.91848131079999995" blue="0.73914263440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EPS-s9-h4K" firstAttribute="top" secondItem="D9x-ev-g39" secondAttribute="bottom" constant="38" id="5VR-Pa-YNz"/>
+                            <constraint firstItem="hqz-ZU-LIC" firstAttribute="trailing" secondItem="ZwX-cT-FIQ" secondAttribute="trailingMargin" constant="8" id="BEX-1w-WRl"/>
+                            <constraint firstItem="hqz-ZU-LIC" firstAttribute="top" secondItem="XmC-wM-0zX" secondAttribute="bottom" constant="-30" id="S5Y-6e-m2v"/>
+                            <constraint firstItem="XmC-wM-0zX" firstAttribute="centerX" secondItem="hqz-ZU-LIC" secondAttribute="centerX" constant="-7" id="YOL-3z-Lk6"/>
+                            <constraint firstItem="Tjv-G0-Fck" firstAttribute="top" secondItem="ZwX-cT-FIQ" secondAttribute="top" id="bvU-hO-njC"/>
+                            <constraint firstItem="Tjv-G0-Fck" firstAttribute="bottom" secondItem="EPS-s9-h4K" secondAttribute="top" id="c8I-MJ-5HF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="D9x-ev-g39" secondAttribute="trailing" constant="22" id="ctz-n7-E7a"/>
+                            <constraint firstItem="Tjv-G0-Fck" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" id="eJa-ql-kIv"/>
+                            <constraint firstAttribute="trailing" secondItem="Tjv-G0-Fck" secondAttribute="trailing" id="o1C-4k-W1W"/>
+                            <constraint firstItem="D9x-ev-g39" firstAttribute="top" secondItem="hqz-ZU-LIC" secondAttribute="bottom" constant="8" id="zLP-Wl-RRB"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="bcakBtn" destination="IRz-pP-kBG" id="vRF-f9-dzd"/>
+                        <outlet property="cancleBtn" destination="biD-y7-si2" id="VFM-dF-tdx"/>
+                        <outlet property="capBtn" destination="D9x-ev-g39" id="gy7-Xa-4Vu"/>
+                        <outlet property="confirmBtn" destination="NZY-A9-u01" id="8b4-Wq-lM2"/>
+                        <outlet property="cropBtn" destination="eXE-Og-Pl2" id="dDD-y2-VDT"/>
+                        <outlet property="freezeBtn" destination="XmC-wM-0zX" id="MYC-SK-2yV"/>
+                        <outlet property="resume" destination="iPr-Lf-4sX" id="qcX-Jj-t1x"/>
+                        <outlet property="scrollView" destination="Tjv-G0-Fck" id="FzG-dQ-fVD"/>
+                        <outlet property="useGallaryBtn" destination="hqz-ZU-LIC" id="kHa-MW-sHq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="594.39999999999998" y="-244.22788605697153"/>
+        </scene>
+    </scenes>
+</document>
